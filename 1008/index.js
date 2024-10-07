@@ -14,4 +14,4 @@ function showResult(number, value, hours){
 
     console.log(`NUMBER = ${number}\nSALARY = U$ ${salary}`);
 }
-showResult();
+showResult(number, valueHour, hours);

@@ -1,5 +1,5 @@
 let input = require("fs").readFileSync("dev/stdin", "utf-8");
-let value = input.split("\n").map((x) => parseInt(x)[0]);
+let value = input.split("\n").map((x) => parseInt(x))[0];
 
 const getSixOddNumbers = (number) => {
     let count = number;
@@ -13,5 +13,4 @@ const getSixOddNumbers = (number) => {
         count++;
     }
 }
-getSixOddNumbers();
-
+getSixOddNumbers(value);
