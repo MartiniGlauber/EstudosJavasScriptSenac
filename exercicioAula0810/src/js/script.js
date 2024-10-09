@@ -20,6 +20,5 @@ form.addEventListener("submit", (event) => {
 
     deleteBtn.addEventListener("click", (event) => {
         event.target.parentElement.remove();
-    });
-    
+    });    
 });
