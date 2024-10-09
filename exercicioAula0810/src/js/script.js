@@ -1,27 +1,25 @@
-const wrapper = document.querySelector(".wrapper");
-const form = wrapper.querySelector("form");
-const inputList = wrapper.querySelector("#inputList");
-const addListBtn = wrapper.querySelector("#addListBtn");
-const list = wrapper.querySelector("#list");
+const form = document.querySelector("form");
+const input = document.querySelector("#inputList");
+const addListBtn = document.querySelector("#addListBtn");
+const list = document.querySelector(".list");
 
 
 form.addEventListener("submit", (event) => {
     event.preventDefault();
+    let inputValue = input.value.trim();
+    
+    addListBtn.innerText = "Adicionando item a lista";
+    input.value = "";
+    
+    let li = document.createElement("li");
+    li.innerText = inputValue;
+    const deleteBtn = document.createElement("button");
+    deleteBtn.innerHTML = "Deletar item";
+    li.appendChild(deleteBtn);
+    list.appendChild(li);
 
-    let listValue = inputList.value.trim();
-    if(listValue) {
-        let listItem = document.createElement("li");
-        listItem.textContent = listValue;
-
-        let deleteBtn = document.createElement("button");
-        deleteBtn.textContent = "Deletar item";
-        deleteBtn.addEventListener("click", () => {
-            listItem.remove();
-        });
-        listItem.appendChild(deleteBtn);
-        list.appendChild(listItem);
-
-        inputList.value = "";
-        inputList.focus();
-    }
+    deleteBtn.addEventListener("click", (event) => {
+        event.target.parentElement.remove();
+    });
+    
 });
