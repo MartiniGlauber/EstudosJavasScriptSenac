@@ -8,9 +8,14 @@ form.addEventListener("submit", (event) => {
     event.preventDefault();
     
     let inputValue = input.value.trim();
-    if(validaInput()){
+    if(validaInput() || itemExists(inputValue)){
+        input.value = "";
+        input.style.border = "2px solid red";
+        input.focus();
         return
     }
+
+    input.style.border = "";
     addListBtn.innerText = "Adicionar item a lista";
     input.value = "";
     
@@ -29,7 +34,26 @@ form.addEventListener("submit", (event) => {
 function validaInput(){
     if(input.value == ''){
         alert('Você precisa inserir um item!');
+        input.style.border = "2px solid red";
+        input.focus();
+        return true;
+    }else{
+        input.style.border = "";
+    }
+
+    return false
+}
+
+function itemExists(value){
+    let itens = Array.from(list.querySelectorAll("li")).map(li => li.firstChild.nodeValue.trim());
+    if(itens.includes(value)){
+        alert('Item repetido');
+        input.style.border = "2px solid red";
+        input.focus();        
         return true;
     }
-    return false
+    else{
+        input.style.border = "";
+    }
+    return false;
 }

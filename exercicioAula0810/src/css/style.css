@@ -70,6 +70,8 @@ button:hover {
 
 .list li {
     padding: 10px;
+    display: flex;
+    justify-content: space-between;
     border: 1px solid #ccc;
     border-radius: 4px;
     margin-bottom: 10px;
