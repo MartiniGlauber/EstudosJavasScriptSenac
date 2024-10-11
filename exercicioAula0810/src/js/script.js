@@ -6,9 +6,12 @@ const list = document.querySelector(".list");
 
 form.addEventListener("submit", (event) => {
     event.preventDefault();
-    let inputValue = input.value.trim();
     
-    addListBtn.innerText = "Adicionando item a lista";
+    let inputValue = input.value.trim();
+    if(validaInput()){
+        return
+    }
+    addListBtn.innerText = "Adicionar item a lista";
     input.value = "";
     
     let li = document.createElement("li");
@@ -22,3 +25,11 @@ form.addEventListener("submit", (event) => {
         event.target.parentElement.remove();
     });    
 });
+
+function validaInput(){
+    if(input.value == ''){
+        alert('Você precisa inserir um item!');
+        return true;
+    }
+    return false
+}
