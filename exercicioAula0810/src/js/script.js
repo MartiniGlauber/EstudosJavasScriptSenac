@@ -33,7 +33,6 @@ form.addEventListener("submit", (event) => {
 
 function validaInput(){
     if(input.value == ''){
-        alert('Você precisa inserir um item!');
         input.style.border = "2px solid red";
         input.focus();
         return true;
