@@ -1,4 +1,4 @@
-import { addItemToList, validaInput, itemExists, insertMessage } from './helpers.js';
+import { addItemToList, validaInput, itemExists, insertMessage } from './utilsFunctions.js';
 import { storeItem } from "./storage.js";
 
 const form = document.querySelector("#itemForm");

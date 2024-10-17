@@ -1,4 +1,4 @@
-import { addItemToList } from "./helpers.js";
+import { addItemToList } from "./utilsFunctions";
 
 export function loadItems(){
     const storedItems = JSON.parse(localStorage.getItem('items')) || [];
