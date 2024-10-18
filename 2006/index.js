@@ -2,7 +2,7 @@ let input = require("fs").readFileSync("dev/stdin", "utf-8");
 let lines = input.split('\n');
 
 const teaFlavor = parseInt(lines.shift());
-let answer = parseInt(lines[1].split('').map(x));
+let answer = lines.shift().split(' ').map((x) => parseInt(x));
 let rightAnswer = 0;
 
 function verifyAnswer() {
