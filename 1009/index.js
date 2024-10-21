@@ -6,9 +6,6 @@ let salary = parseFloat(lines[1]);
 let sales = parseFloat(lines[2]);
 let tip = 0;
 
-console.log(typeof salary, salary);
-
-
 function tipCalc(sales){
     tip = ((sales * 15)/100).toFixed(2);
     return tip; 
