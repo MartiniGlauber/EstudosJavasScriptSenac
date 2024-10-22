@@ -1,24 +1,31 @@
 let input = require("fs").readFileSync("dev/stdin", "utf-8");
 let lines = input.split("\n");
 
-let variavel1 = lines[0];
-let variavel2 = lines[1];
-let [cod1, numPecas, valor] = variavel1;
+let productA = lines[0];
+let productB = lines[1];
 
+productA = productA.split(' ');
+productB = productB.split(' ');
 
-// variavel1.forEach(variavel => {
-//     cod1 = variavel.split().map((x) => parseInt(x));
-//     numPecas = variavel.split().map((x) => parseInt(x));
-//     valor = variavel.split().map((x) => parseFloat(x));
-// });
+let dataA = productA.map(x => parseFloat(x));
+let dataB = productB.map(x => parseFloat(x));
 
-// variavel1 = lines[0];
-// variavel1 = lines[0];
-// variavel1 = lines[0];
+let calcDataA = dataA.slice(1); 
+let [part1, value1] = calcDataA;
+let calcDataB = dataB.slice(1);
+let [part2, value2] = calcDataB;
 
-console.log(typeof cod1, cod1);
-console.log(typeof numPecas, numPecas);
-console.log(typeof valor, valor);
+let priceA = 0;
+let priceB = 0;
+
+function calcProductPrice(){
+    priceA = part1 * value1;
+    priceB = part2 * value2;
+    totalPrice = (priceA + priceB).toFixed(2);
+    console.log(`VALOR A PAGAR: R$ ${totalPrice}`);
+}
+
+calcProductPrice();
 
 
 //Neste problema, deve-se ler o código de uma peça 1, o número de peças 1, o valor unitário de cada peça 1, 
