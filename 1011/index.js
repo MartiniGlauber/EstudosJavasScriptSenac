@@ -1,11 +1,12 @@
 let input = require("fs").readFileSync("dev/stdin", "utf-8");
 let ray = input.split("\n").map((x) => parseFloat(x));
 
-let pi = 3.14159
+let pi = 3.14159;
 
 function volumeCalc(){
     let volume = (4 / 3.0) * pi * Math.pow(ray, 3); 
-    console.log(`VOLUME = ${parseFloat(volume.toFixed(3))}`);
+    console.log(`VOLUME = ${volume.toFixed(3)}`);
+    
 } 
 volumeCalc();
 
