@@ -10,6 +10,5 @@ function calcGas(){
     gas = (gas).toFixed(3);
     console.log(gas);
 }
-
 calcGas();
 
